@@ -703,17 +703,17 @@
                 <h2>關鍵技術特點</h2>
                 <div class="features-grid">
                     <div class="feature-card">
-                        <h4>🔄 溫度耦合處理</h4>
+                        <h4>🔄 考慮冷卻水塔的物理限制</h4>
                         <div class="math-equation">newtemp = x11 + x22</div>
-                        <p>考慮冷卻塔入水溫度與環境濕球溫度的物理耦合關係，確保系統運行的可行性與穩定性。</p>
+                        <p>考慮冷卻塔入水溫度與環境濕球溫度的物理關係，確保系統運行的可行性。</p>
                     </div>
                     <div class="feature-card">
                         <h4>🎯 整體系統優化</h4>
                         <p>考慮冷卻塔、冰水機、泵三個組件之間的相互影響，尋找整體最優解而非各別最佳，避免局部最優化問題。</p>
                     </div>
                     <div class="feature-card">
-                        <h4>🔗 共享變數策略</h4>
-                        <p>shared_x2_x111 同時作為冰水機和泵模型的輸入特徵，實現耦合系統的協同優化，提升整體能效。</p>
+                        <h4>🔗 使用簡化模型描述系統</h4>
+                        <p>因設備運行的特性，所以使用簡化模型描述三台冰水機 (但其實這樣做我自己覺得不嚴謹)。</p>
                     </div>
                 </div>
             </div>
@@ -780,7 +780,7 @@
                             <p><strong>範例 - 粒子A的狀態：</strong></p>
                             <p>• x11 = 8.5°C (冷卻塔入水溫度)</p>
                             <p>• shared_x2_x111 = 4.2°C (冷卻水溫差)</p>
-                            <p>→ 系統總能耗 = 120 kW</p>
+                            <p>→ 系統總能耗 = 120 kW (這只是假設)</p>
                         </div>
                         <div class="code-display">
                             <div class="code-line"><span class="var-name">位置</span> = [8.5, 4.2]     <span class="comment"># 當前參數組合</span></div>
